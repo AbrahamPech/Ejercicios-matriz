@@ -1,4 +1,10 @@
+import os
+
 class Empleado:
+    @staticmethod
+    def clear_screen():
+        os.system('cls' if os.name == 'nt' else 'clear')
+
     @staticmethod
     def agregarIngresoQuincenal(ingresosQuincenales, ingreso):
         ingresosQuincenales.append(ingreso)
@@ -18,26 +24,34 @@ class Empleado:
         ingresosEmpleados = []
     
         for i in range(5):
+            Empleado.clear_screen()
             nombre = input(f"Ingrese el nombre del empleado {i+1}: ")
             empleados.append(nombre)
             
             ingresosQuincenales = []
             for mes in range(5):
-                ingreso = float(input(f"Ingrese el ingreso quincenal del empleado {nombre} para el mes {mes+1}: "))
+                while True:
+                    Empleado.clear_screen()
+                    try:
+                        ingreso = float(input(f"Ingrese el ingreso quincenal del empleado {nombre} para el mes {mes+1}: "))
+                        if ingreso < 0:
+                            raise ValueError("El ingreso no puede ser negativo")
+                        break
+                    except ValueError:
+                        print("Error: Ingrese un número válido. El ingreso no puede ser negativo ni contener letras.")
+                        input("Presione Enter para continuar...")
                 Empleado.agregarIngresoQuincenal(ingresosQuincenales, ingreso)
             
             ingresosEmpleados.append(ingresosQuincenales)
         
-        # Vector con ingreso acumulado para cada empleado
         ingresosAcumulados = []
         for ingresos in ingresosEmpleados:
             ingresoAcumulado = Empleado.calcularIngresoAcumulado(ingresos)
             ingresosAcumulados.append(ingresoAcumulado)
         
-        # Mostrar total pagado en sueldos en los últimos 5 meses
+        Empleado.clear_screen()
         totalPagado = sum(ingresosAcumulados)
         print(f"\nTotal pagado en sueldos en los últimos 5 meses: {totalPagado}")
-        
-        # Obtener el empleado con el mayor ingreso acumulado
+
         empleadoMaxIngresos = Empleado.obtenerEmpleadoMaxIngresos(empleados, ingresosAcumulados)
         print(f"Empleado con mayor ingreso acumulado: {empleadoMaxIngresos}")
