@@ -1,9 +1,9 @@
 ('C:\\Users\\jorge\\OneDrive\\Documentos\\Nen\\4Cuatrimestre\\Estructura de '
  'datos\\5Ejercicios\\dist\\main.exe',
+ True,
  False,
  False,
- False,
- 'C:\\Users\\jorge\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\bootloader\\images\\icon-windowed.ico',
+ 'C:\\Users\\jorge\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\bootloader\\images\\icon-console.ico',
  None,
  False,
  False,
@@ -104,8 +104,8 @@
  [],
  False,
  False,
- 1727475465,
- [('runw.exe',
-   'C:\\Users\\jorge\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\runw.exe',
+ 1727475934,
+ [('run.exe',
+   'C:\\Users\\jorge\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',
    'EXECUTABLE')],
  'C:\\Users\\jorge\\AppData\\Local\\Programs\\Python\\Python312\\python312.dll')
