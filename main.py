@@ -2,6 +2,7 @@ from Invertir import Invertir
 from Buscar import Buscar
 from Pesos import Pesos
 from Promedios import Promedios
+from Empleado import Empleado
 
 while True:
     print("Menu")
@@ -23,5 +24,7 @@ while True:
         Pesos.main()
     elif opcion == '4':
         Promedios.main()
+    elif opcion == '5':
+        Empleado.main()
     else:
         print("nada")    
